@@ -36,8 +36,9 @@ def movie(movie_id):
     '''
     View root page function that returns the index page and its data
     '''
-
-    movie = get_movie(id)
+    print('get_movie')
+    movie = get_movie(movie_id)
+    print('get_movie', movie)
     title = f'{movie.title}'
     reviews = Review.get_reviews(movie.id)
 

@@ -56,6 +56,7 @@ def process_results(movie_list):
 
 def get_movie(id):
     get_movie_details_url = base_url.format(id,api_key)
+    print('get__movie_details_url' ,id)
 
     with urllib.request.urlopen(get_movie_details_url) as url:
         movie_details_data = url.read()
@@ -71,6 +72,7 @@ def get_movie(id):
             vote_count = movie_details_response.get('vote_count')
 
             movie_object = Movie(id,title,overview,poster,vote_average,vote_count)
+            print('movie_object', movie_object)
 
     return movie_object
 
